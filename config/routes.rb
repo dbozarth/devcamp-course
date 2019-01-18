@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :portfolios, except: [:show]
   # Example of hard coded url
   get 'angular-items', to: 'portfolios#angular'
