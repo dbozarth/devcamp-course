@@ -27,13 +27,14 @@
         </button>
       </div>
     <% end %>
-    <br/>
+    <p>&nbsp;</p>
     <% if current_user %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
     <% else %>
       <%= link_to "Register", new_user_registration_path, class: 'btn btn-success' %>
       <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary' %>
     <% end %>
+    <p>&nbsp;</p>
     <%= yield %>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
