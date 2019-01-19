@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title>Don,s Site</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -28,7 +28,7 @@
       </div>
     <% end %>
     <p>&nbsp;</p>
-    <% if current_user %>
+    <% if current_user.is_a?(User) %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
     <% else %>
       <%= link_to "Register", new_user_registration_path, class: 'btn btn-success' %>
@@ -36,6 +36,12 @@
     <% end %>
     <p>&nbsp;</p>
     <%= yield %>
+
+<%# Sessions Example. Requires the link to contain ?q and whatever you want to be stored into the session. %>
+
+    <% if session[:source] %>
+      <p>Thanks for visiting from <%= session[:source] %>
+    <% end %>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
