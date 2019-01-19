@@ -37,11 +37,8 @@
     <p>&nbsp;</p>
     <%= yield %>
 
-<%# Sessions Example. Requires the link to contain ?q and whatever you want to be stored into the session. %>
-
-    <% if session[:source] %>
-      <p>Thanks for visiting from <%= session[:source] %>
-    <% end %>
+    <%# The source_helper is located in application_helper.rb %>
+    <%= source_helper("portfolio") %>
 
   </div>
   </body>
