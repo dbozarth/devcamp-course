@@ -15,6 +15,8 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'puma', '~> 3.11.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use bootstrap
+gem 'bootstrap', '~> 4.2.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -59,3 +61,6 @@ gem 'friendly_id', '~> 5.1.0'
 # Safety gem install to ensure upgrades that do not ship with these
 # gems are included.
 gem 'ostruct', '~> 0.1.0'
+
+# Use Personal Gems
+gem 'fuelcnc_view_tool', git: 'https://github.com/dbozarth/fuelcnc-view-tool' 
