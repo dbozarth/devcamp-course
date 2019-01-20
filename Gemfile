@@ -61,3 +61,6 @@ gem 'friendly_id', '~> 5.1.0'
 # Safety gem install to ensure upgrades that do not ship with these
 # gems are included.
 gem 'ostruct', '~> 0.1.0'
+
+# Use Personal Gems
+gem 'fuelcnc_view_tool', git: 'https://github.com/dbozarth/fuelcnc-view-tool' 

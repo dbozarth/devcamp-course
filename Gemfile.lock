@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/dbozarth/fuelcnc-view-tool
+  revision: 1cccb539b7d320c04f1d207ed7c24e5183ea9dab
+  specs:
+    fuelcnc_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +219,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   friendly_id (~> 5.1.0)
+  fuelcnc_view_tool!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
