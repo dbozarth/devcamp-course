@@ -2,7 +2,7 @@ module ApplicationHelper
   
   ## Will render on views as html. 
   ## Removes redundant code for common items.
-  def login_helper style
+  def login_helper style = ''
      if current_user.is_a?(GuestUser)
       ## Chaining of these with + will concatenate the calls
       ## preventing Ruby from only returning the last item!
