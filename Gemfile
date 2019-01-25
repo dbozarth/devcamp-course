@@ -17,6 +17,11 @@ gem 'puma', '~> 3.11.4'
 gem 'sass-rails', '~> 5.0'
 # Use bootstrap
 gem 'bootstrap', '~> 4.2.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+gem 'gritter', '~> 1.2'
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+gem 'coderay', '~> 1.1', '>= 1.1.1'
+gem 'redcarpet', '~> 3.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

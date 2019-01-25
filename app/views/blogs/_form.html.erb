@@ -1,27 +1,39 @@
 <%= form_for(blog) do |f| %>
   <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% blog.errors.full_messages.each do |error| %>
+      <%= alert_generator error %>
+    <% end %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.text_field :title, class: 'form-control form-control-sm', placeholder: "Title" %>
   </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <div class="form-group">
+    <%= f.label :topic_id %>
+    <%= f.collection_select(:topic_id, Topic.all, :id, :title,
+                              {
+                                include_blank: true
+                              },
+                              class: 'form-control form-control-sm'
+                            )
+    %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+      &nbsp;&nbsp;
+    <%= f.radio_button :status, 'draft' %>
+    <%= f.label :status, 'Draft' %>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :status, 'published' %>
+    <%= f.label :status, 'Published' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :body, class: 'form-control form-control-sm', rows: 15, placeholder: "Content" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Submit", class: 'btn btn-success' %>
   </div>
 <% end %>
