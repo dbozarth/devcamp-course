@@ -12,6 +12,10 @@ class Portfolio < ApplicationRecord
     where(subtitle: 'Angular')
   end
 
+  def self.by_position
+    order("position ASC")
+  end
+
   scope :ror_items, -> { where(subtitle: 'Ruby On Rails') }
 
   # Setting defaults allows for non-required data to be set to default values
