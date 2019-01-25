@@ -5,7 +5,7 @@ layout 'portfolio'
 access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
     @page_title = "Portfolio | FuelCNC Engineering Services"
   end
 
