@@ -2,25 +2,80 @@ module ApplicationHelper
   
   ## Will render on views as html. 
   ## Removes redundant code for common items.
-  def login_helper
+  def login_helper style = ''
      if current_user.is_a?(GuestUser)
       ## Chaining of these with + will concatenate the calls
       ## preventing Ruby from only returning the last item!
-      (link_to "Register", new_user_registration_path, class: 'btn btn-success') + "&nbsp;&nbsp;&nbsp;".html_safe +
-      (link_to "Login", new_user_session_path, class: 'btn btn-secondary')
+      (link_to "Register     ", new_user_registration_path, class: style) + 
+      (link_to "Login", new_user_session_path, class: style)
      else
-      link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+      link_to "Logout", destroy_user_session_path, method: :delete, class: style
      end
   end
 
   def source_helper(layout_name)
     if session[:source]
-      greeting = "Thanks for visiting from #{session[:source]} and you are on the #{layout_name} layout"
+      greeting = "Thanks for visiting from <strong>#{session[:source]}</strong> and you are on the #{layout_name} layout".html_safe
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
 
   def copyright_generator
     FuelcncViewTool::Renderer.copyright 'FuelCNC', 'All rights resereved'
+  end
+
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: 'Home'
+      },
+      {
+        url: about_me_path,
+        title: 'About Us'
+      },
+      {
+        url: contact_path,
+        title: 'Contact Us'
+      },
+      {
+        url: blogs_path,
+        title: 'Our Blog'
+      },
+      {
+        url: portfolios_path,
+        title: 'Our Portfolio'
+      },
+      # {
+      #   url: tech_news_path,
+      #   title: 'Tech News'
+      # },
+    ]
+  end
+
+  def nav_helper style, tag_type
+    nav_links = ''
+
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+    end
+
+    nav_links.html_safe
+  end
+
+  def active? path
+    "active" if current_page? path
+  end
+
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      alert_generator alert
+    end
+  end
+
+  def alert_generator msg
+    js add_gritter(msg, title: "System Message", sticky: false, :image => :success)
   end
 end

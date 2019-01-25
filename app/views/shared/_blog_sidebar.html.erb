@@ -1,0 +1,28 @@
+<div class="col-sm-3 offset-sm-1 blog-sidebar">
+  <div class="sidebar-module sidebar-module-inset">
+    <h5>Our Mission</h5>
+    <p>
+      To pass any and all knowledge to those who seek it. To assist others with mastery of their specific skills.
+    </p>
+  </div>
+
+  <%= source_helper("alert alert-info blog-sidebar-source") %>
+
+  <div class="sidebar-module">
+    <h5>Blog Topics</h5>
+    <% @side_bar_topics.each do |topic| %>
+      <span class="blog-masthead-links">
+        <p><i class="fa fa-arrow-circle-right text-secondary"></i>&nbsp;<%= link_to topic.title, topic_path(topic) %></p>
+      </span>
+    <% end %>
+  </div>
+
+  <div class="sidebar-module">
+    <h5>Find Us On</h5>
+    <ol class="list-unstyled social-links">
+      <li><a href="https://github.com/jordanhudgens"><%= fa_icon "github", class: 'text-secondary' %></a></li>
+      <li><a href="https://www.instagram.com/jordanhudgens/"><%= fa_icon "instagram", class: 'text-secondary' %></a></li>
+      <li><a href="https://twitter.com/jordanhudgens"><%= fa_icon "twitter", class: 'text-secondary' %></a></li>
+    </ol>
+  </div>
+</div>

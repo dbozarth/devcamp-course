@@ -1,1 +1,74 @@
 @import "bootstrap";
+@import "font-awesome";
+
+// Album SCSS
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.fa {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+/* Custom Styles */
+
+.nav-brand-custom {
+  color: chartreuse;
+}
+
+.portfolio-title a {
+  color: green;
+}
+
+.portfolio-spacer {
+  padding-top: 1.5em;
+}
+
+.nav-portfolio-roller {
+  color: #fff;
+}
+
+.nav-portfolio-roller:hover,
+ .nav-portfolio-roller:focus {
+  color: chartreuse;
+  text-decoration: none;
+}
+
+.nav-portfolio-roller.active {
+  color: green;
+  font-weight: 600;
+  border: 1px;
+  border-left: #fff;
+}
