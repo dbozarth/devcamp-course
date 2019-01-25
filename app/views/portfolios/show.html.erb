@@ -1,15 +1,22 @@
-<%= image_tag @portfolio_item.main_image %>
-
-<h1><%= @portfolio_item.title %></h1>
-
-<em><%= @portfolio_item.subtitle %></em>
-
-<p><%= @portfolio_item.body %></p>
-
-<h3>Technologies Used</h3>
-
-<% @portfolio_item.technologies.each do |t| %>
-  <p><%= t.name %></p>
-<% end %>
-
-<%= link_to 'Back', portfolios_path %>
+<% @page_title = "#{@portfolio_item.title} | FuelCNC" %>
+<div class="container">
+  <% if logged_in?(:site_admin) %>
+    <div class="row portfolio-spacer">
+  <% else %>
+    <div class="row">
+  <% end %>
+    <div class="col-md-7">
+      <%= image_tag @portfolio_item.main_image %>
+    </div>
+    <div class="col-md-5">
+      <h4><%= @portfolio_item.title %></h4>
+        <h6><%= @portfolio_item.subtitle %></h6>
+        <p><%= @portfolio_item.body %></p>
+      <h5>Highlights</h5>
+        <% @portfolio_item.technologies.each do |t| %>
+          <p><i class="fa fa-check text-success"></i><%= t.name %></p>
+        <% end %>
+        <p><i class="fa fa-chevron-left text-dark"></i><%= link_to 'Go Back', portfolios_path, class: 'text-dark' %></p>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, 
 
   def index
     @portfolio_items = Portfolio.all
-    @page_title = "My Portfolio Page"
+    @page_title = "Portfolio | FuelCNC Engineering Services"
   end
 
   def angular
@@ -15,7 +15,6 @@ access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, 
 
   def new
     @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -64,6 +63,7 @@ access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, 
     params.require(:portfolio).permit(:title,
                                       :subtitle,
                                       :body,
+                                      :main_image,
                                       technologies_attributes: [:name]
                                      )
   end

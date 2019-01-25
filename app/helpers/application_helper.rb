@@ -32,19 +32,19 @@ module ApplicationHelper
       },
       {
         url: about_me_path,
-        title: 'About Me'
+        title: 'About Us'
       },
       {
         url: contact_path,
-        title: 'Contact'
+        title: 'Contact Us'
       },
       {
         url: blogs_path,
-        title: 'Blog'
+        title: 'Our Blog'
       },
       {
         url: portfolios_path,
-        title: 'Portfolio'
+        title: 'Our Portfolio'
       },
       # {
       #   url: tech_news_path,

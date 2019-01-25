@@ -8,7 +8,7 @@ module DefaultPageContent
   end
 
   def set_title
-    @page_title = "DevCamp - Portfolio App"
+    @page_title = "FuelCNC Engineering Services"
   end
 
   def set_seo

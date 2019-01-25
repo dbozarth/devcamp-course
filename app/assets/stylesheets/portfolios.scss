@@ -47,3 +47,28 @@ footer p {
 .nav-brand-custom {
   color: chartreuse;
 }
+
+.portfolio-title a {
+  color: green;
+}
+
+.portfolio-spacer {
+  padding-top: 1.5em;
+}
+
+.nav-portfolio-roller {
+  color: #fff;
+}
+
+.nav-portfolio-roller:hover,
+ .nav-portfolio-roller:focus {
+  color: chartreuse;
+  text-decoration: none;
+}
+
+.nav-portfolio-roller.active {
+  color: green;
+  font-weight: 600;
+  border: 1px;
+  border-left: #fff;
+}
