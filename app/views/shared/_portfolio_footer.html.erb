@@ -1,7 +1,7 @@
 <div class="container">
   <p class="float-right">
-    <a href="#" class="text-dark"><i class="fa fa-arrow-up"></i>Back to top |  </a>
-    <%= link_to " Create New Item", new_portfolio_url, class: 'text-dark' if logged_in?(:site_admin) %>
+    <a href="#" class="text-dark"><i class="fa fa-arrow-up"></i>Back to top</a>
+    <%= link_to " | Create New Item", new_portfolio_url, class: 'text-dark' if logged_in?(:site_admin) %>
   </p>
   <p><%= source_helper("portfolio") %></p>
   <p><%= copyright_generator %></p>
