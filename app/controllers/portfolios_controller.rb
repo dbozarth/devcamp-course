@@ -71,6 +71,7 @@ access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, 
                                       :subtitle,
                                       :body,
                                       :main_image,
+                                      :thumb_image,
                                       technologies_attributes: [:name]
                                      )
   end
