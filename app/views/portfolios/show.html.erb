@@ -1,12 +1,12 @@
 <% @page_title = "#{@portfolio_item.title} | FuelCNC" %>
-<div class="container">
+<div class="container portfolio-spacer">
   <% if logged_in?(:site_admin) %>
     <div class="row portfolio-spacer">
   <% else %>
     <div class="row">
   <% end %>
     <div class="col-md-7">
-      <%= image_tag @portfolio_item.main_image %>
+      <%= image_tag @portfolio_item.main_image.to_s %>
     </div>
     <div class="col-md-5">
       <h4><%= @portfolio_item.title %></h4>
@@ -17,6 +17,10 @@
           <p><i class="fa fa-check text-success"></i><%= t.name %></p>
         <% end %>
         <p><i class="fa fa-chevron-left text-dark"></i><%= link_to 'Go Back', portfolios_path, class: 'text-dark' %></p>
+        <% if logged_in?(:site_admin) %>
+          <p><i class="fa fa-edit text-dark"></i><%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'text-dark' %>
+          </p>
+        <% end %>
     </div>
   </div>
 </div>

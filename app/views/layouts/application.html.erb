@@ -14,21 +14,23 @@
   </head>
 
   <body>
-    <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column">
+  
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">  
+      
+      <div id="background">
+      </div>
       <header class="masthead mb-auto">
         <div class="inner">
-          <div class="masthead-brand">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-            <h4>Fuel</h4><h4 class="nav-brand-custom">CNC</h4>
-            </a>
-          </div>
+          <h4 class="masthead-brand">Fuel<span class="nav-brand-custom">CNC</span></h4>
           <%= render 'shared/application_nav' %>
         </div>
       </header>
-    <%= yield %>
+      
+      <%= yield %>
 
-    <%= render 'shared/application_footer' %>
+      <%= render 'shared/application_footer' %>
 
     </div>
+    
   </body>
 </html>

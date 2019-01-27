@@ -22,6 +22,13 @@ gem 'gritter', '~> 1.2'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'redcarpet', '~> 3.4'
+# Use file uploading
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave-aws', '~> 1.3'
+gem 'dotenv-rails', '~> 2.6'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+# Use Form Nesting
+gem 'cocoon', '~> 1.2', '>= 1.2.12'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

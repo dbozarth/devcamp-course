@@ -1,11 +1,15 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
-  accepts_nested_attributes_for :technologies, 
+  accepts_nested_attributes_for :technologies,
+                                allow_destroy: true, 
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
   includes Placeholder
 
   validates_presence_of :title, :body, :main_image, :thumb_image
+
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
 
   # Class based scope
   def self.angular
@@ -20,7 +24,7 @@ class Portfolio < ApplicationRecord
 
   # Setting defaults allows for non-required data to be set to default values
   # when the action is called in the controller. ||= means if nil use default.
-  after_initialize :set_defaults
+  #after_initialize :set_defaults
 
   def set_defaults
     self.main_image ||= Placeholder.image_generator(height: 600, width: 400)
