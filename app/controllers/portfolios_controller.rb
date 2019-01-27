@@ -68,11 +68,12 @@ access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, 
     ## Common Syntax Styling
     # Here the permitted items are styled to allow easy reading. 
     params.require(:portfolio).permit(:title,
+                                      :id,
                                       :subtitle,
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [:name]
+                                      technologies_attributes: [:id, :name, :_destroy]
                                      )
   end
 
