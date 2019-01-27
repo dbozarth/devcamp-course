@@ -36,7 +36,11 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit "Submit", class: 'btn btn-success btn-block' %>
+      <%= f.submit "Submit", class: 'btn btn-success btn-block btn-sm' %>
+      <%= link_to 'Show Blog', @blog, class: 'btn btn-secondary btn-block btn-sm' %>
+      <%= link_to 'Cancel Update', blogs_path, class: 'btn btn-danger btn-block btn-sm' %>
     </div>
   <% end %>
+  <div>
+  </div>
 </div>
