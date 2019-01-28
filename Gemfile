@@ -29,6 +29,8 @@ gem 'dotenv-rails', '~> 2.6'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 # Use Form Nesting
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
+# Twitter Gem
+gem 'twitter', '~> 6.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
