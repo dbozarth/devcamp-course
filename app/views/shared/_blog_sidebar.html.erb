@@ -10,10 +10,12 @@
 
   <div class="sidebar-module">
     <h5>Blog Topics</h5>
-    <% @side_bar_topics.each do |topic| %>
-      <span class="blog-masthead-links">
-        <p><i class="fa fa-arrow-circle-right text-secondary"></i>&nbsp;<%= link_to topic.title, topic_path(topic) %></p>
-      </span>
+    <% if !logged_in?(:site_admin) %>
+      <% @side_bar_topics.each do |topic| %>
+        <span class="blog-masthead-links">
+          <p><i class="fa fa-arrow-circle-right text-secondary"></i>&nbsp;<%= link_to topic.title, topic_path(topic) %></p>
+        </span>
+      <% end %>
     <% end %>
   </div>
 

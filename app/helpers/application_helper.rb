@@ -76,6 +76,6 @@ module ApplicationHelper
   end
 
   def alert_generator msg
-    js add_gritter(msg, title: "System Message", sticky: false, :image => :success)
+    js add_gritter(msg, title: "System Message", sticky: false)
   end
 end
