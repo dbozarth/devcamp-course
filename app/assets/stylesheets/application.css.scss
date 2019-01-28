@@ -151,3 +151,12 @@ body {
   background: url(asset_path('home_bg.png'));
   background-size: cover;
 }
+
+.tech-news-text {
+  font-size: .75em;
+  text-shadow: none;
+}
+
+.tech-news-text a {
+  color: chartreuse;
+}
